@@ -85,7 +85,7 @@
                 </div>
 
                 <div class="links">
-                    <a>Entrar</a>
+                    <a href="/login">Entrar</a>
                 </div>
             </div>
         </div>
