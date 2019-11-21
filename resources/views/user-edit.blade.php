@@ -79,30 +79,31 @@
                 <div class="col-md-2"></div>
                 <div class="col-md-8">
                     <div class="title">
-                        Registre-se
+                        Edicao
                     </div>
                     <span style="font-size: 30px; color:red">
                     <?php if(isset($erro)){echo($erro);} ?>
                     </span>
                     <form method="post" action="/registeruser">
                         <?php echo csrf_field() ?>
+                        <?php session_start();?>
                         <div align="center">
                             <div class="form-group">
                                 <span style="font-size: 30px">Username</span>
-                                <input class="form-control form-control-lg" type="text" placeholder="Username" name="username" id="username">
+                                <input class="form-control form-control-lg" type="text" placeholder="{{$_SESSION['user']->username}}" name="username" id="username">
                             </div>
                             <br />
                             <div class="form-group">
                                 <span style="font-size: 30px">E-mail</span>
-                                <input class="form-control form-control-lg" type="text" placeholder="E-Mail" id="email" name="email">
+                                <input class="form-control form-control-lg" type="text" placeholder="{{$_SESSION['user']->email}}" id="email" name="email">
                             </div>
                             <div class="form-group">
                                 <span style="font-size: 30px">Senha</span>
-                                <input class="form-control form-control-lg" type="password" placeholder="Password" id="password" name="password">
+                                <input class="form-control form-control-lg" type="password" placeholder="************" id="password" name="password">
                             </div>
                             <div class="form-group">
                                 <span style="font-size: 30px">Sexo</span>
-                                <input class="form-control form-control-lg" type="text" placeholder="Sexo" id="sex" name="sex">
+                                <input class="form-control form-control-lg" type="text" placeholder="{{$_SESSION['user']->sex}}" id="sex" name="sex">
                             </div>
                             <div class="form-group">
                                 <span style="font-size: 30px">Data de Nascimento</span>
