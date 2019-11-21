@@ -28,7 +28,7 @@ Route::get('/editUser/{id}', function () {
 });
 
 
-// Route::view('/home','home')->name('home page');
+Route::view('/home','home')->name('home page');
 // Route::get('/home', function(){
 //     return view('home');
 // });
