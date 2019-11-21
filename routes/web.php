@@ -34,5 +34,6 @@ Route::view('/home','home')->name('home page');
 // });
 
 Route::post('/user/login', 'UserController@Login');
+Route::post('/user/edit/{id}', 'UserController@Edit');
 Route::get('/deleteUser/{id}', 'UserController@Delete');
 Route::post('/registeruser', 'UserController@Register');

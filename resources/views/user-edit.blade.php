@@ -82,11 +82,15 @@
                         Edicao
                     </div>
                     <span style="font-size: 30px; color:red">
-                    <?php if(isset($erro)){echo($erro);} ?>
+                        <?php if (isset($erro)) {
+                            echo ($erro);
+                        } ?>
                     </span>
-                    <form method="post" action="/registeruser">
+                    <?php if (session_id() == '') {
+                        session_start();
+                    } ?>
+                    <form method="post" action="/user/edit/{{$_SESSION['user']->id}}">
                         <?php echo csrf_field() ?>
-                        <?php session_start();?>
                         <div align="center">
                             <div class="form-group">
                                 <span style="font-size: 30px">Username</span>

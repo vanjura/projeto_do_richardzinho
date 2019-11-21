@@ -85,18 +85,20 @@
                     <br />
                     <div style="text-align: left;">
                         <div class="form-group">
-                            <?php session_start();?>
+                            <?php if (session_id() == '') {
+                                session_start();
+                            } ?>
                             <span style="font-size: 30px">Dados do usuario logado:</span>
                             <br>
-                            <span style="font-size: 30px">id: <?php echo($_SESSION['user']->id); ?></span>
+                            <span style="font-size: 30px">id: <?php echo ($_SESSION['user']->id); ?></span>
                             <br>
-                            <span style="font-size: 30px">username: <?php echo($_SESSION['user']->username); ?></span>
+                            <span style="font-size: 30px">username: <?php echo ($_SESSION['user']->username); ?></span>
                             <br>
-                            <span style="font-size: 30px">email: <?php echo($_SESSION['user']->email); ?></span>
+                            <span style="font-size: 30px">email: <?php echo ($_SESSION['user']->email); ?></span>
                             <br>
-                            <span style="font-size: 30px">birthdate: <?php echo($_SESSION['user']->birthdate); ?></span>
+                            <span style="font-size: 30px">birthdate: <?php echo ($_SESSION['user']->birthdate); ?></span>
                             <br>
-                            <span style="font-size: 30px">sex: <?php echo($_SESSION['user']->sex); ?></span>
+                            <span style="font-size: 30px">sex: <?php echo ($_SESSION['user']->sex); ?></span>
                             <br>
                             <a class="btn btn-outline-warning" href="/editUser/{{$_SESSION['user']->id}}" class="button">Editar</a>
                             <a class="btn btn-outline-danger" href="/deleteUser/{{$_SESSION['user']->id}}" class="button">Excluir</a>
@@ -106,5 +108,7 @@
                 </div>
             </div>
 </body>
+
+
 
 </html>
