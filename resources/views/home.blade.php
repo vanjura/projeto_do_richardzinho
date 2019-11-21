@@ -83,32 +83,28 @@
                     </div>
                     <br />
                     <br />
-                    <div align="center">
+                    <div style="text-align: left;">
                         <div class="form-group">
-                            <span style="font-size: 30px">Home</span>
-                            <form method="post" action="/user/login">
-                            <?php echo csrf_field() ?>
-                                <input class="form-control form-control-lg" type="text" placeholder="E-mail" name="email" id="email">
+                            <?php session_start();?>
+                            <span style="font-size: 30px">Dados do usuario logado:</span>
+                            <br>
+                            <span style="font-size: 30px">id: <?php echo($_SESSION['user']->id); ?></span>
+                            <br>
+                            <span style="font-size: 30px">username: <?php echo($_SESSION['user']->username); ?></span>
+                            <br>
+                            <span style="font-size: 30px">email: <?php echo($_SESSION['user']->email); ?></span>
+                            <br>
+                            <span style="font-size: 30px">birthdate: <?php echo($_SESSION['user']->birthdate); ?></span>
+                            <br>
+                            <span style="font-size: 30px">sex: <?php echo($_SESSION['user']->sex); ?></span>
+                            <br>
+                            <a class="btn btn-outline-warning" href="/edit/{{$_SESSION['user']->id}}" class="button">Editar</a>
+                            <a class="btn btn-outline-danger" href="/delete/{{$_SESSION['user']->id}}" class="button">Excluir</a>
                         </div>
-                        <br />
-                        <div class="form-group">
-                            <span style="font-size: 30px">Senha</span>
-                            <input class="form-control form-control-lg" type="password" placeholder="Senha" id="password" name="password">
-                        </div>
+                        <div class="col-md-2"></div>
                     </div>
-                    <br>
-                    <button type="submit" class="btn btn-outline-success">Entrar</button>
-                    <div align="center">
-                        <a href="/register"><p>Registre-se</p>
-                    </div>
-                    <br>
-                    </form>
-
                 </div>
-                <div class="col-md-2"></div>
             </div>
-        </div>
-    </div>
 </body>
 
 </html>
