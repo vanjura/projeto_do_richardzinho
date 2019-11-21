@@ -24,7 +24,7 @@ Route::get('/register', function () {
 });
 
 Route::get('/editUser/{id}', function () {
-    return view('editar');
+    return view('user-edit');
 });
 
 
