@@ -98,8 +98,8 @@
                             <br>
                             <span style="font-size: 30px">sex: <?php echo($_SESSION['user']->sex); ?></span>
                             <br>
-                            <a class="btn btn-outline-warning" href="/edit/{{$_SESSION['user']->id}}" class="button">Editar</a>
-                            <a class="btn btn-outline-danger" href="/delete/{{$_SESSION['user']->id}}" class="button">Excluir</a>
+                            <a class="btn btn-outline-warning" href="/editUser/{{$_SESSION['user']->id}}" class="button">Editar</a>
+                            <a class="btn btn-outline-danger" href="/deleteUser/{{$_SESSION['user']->id}}" class="button">Excluir</a>
                         </div>
                         <div class="col-md-2"></div>
                     </div>

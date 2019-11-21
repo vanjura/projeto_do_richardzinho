@@ -23,7 +23,7 @@ Route::get('/register', function () {
     return view('register');
 });
 
-Route::get('/edit/{id}', function () {
+Route::get('/editUser/{id}', function () {
     return view('editar');
 });
 
@@ -34,5 +34,5 @@ Route::get('/edit/{id}', function () {
 // });
 
 Route::post('/user/login', 'UserController@Login');
-Route::get('/delete/{id}', 'UserController@Delete');
+Route::get('/deleteUser/{id}', 'UserController@Delete');
 Route::post('/registeruser', 'UserController@Register');
