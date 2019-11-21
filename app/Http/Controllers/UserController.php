@@ -12,7 +12,7 @@ class UserController extends Controller
         if(!empty ($_POST)) {
             $json = json_encode($_POST);
             $client = new Client();
-            $url="http://localhost:3000/user/login";
+            $url= env("API_URL", "http://localhost:3000") . "/user/login";
             try {
                 $options = [
                     'headers' => [
@@ -43,7 +43,7 @@ class UserController extends Controller
         if(!empty ($_POST)) {
             $json = json_encode($_POST);
             $client = new Client();
-            $url="http://localhost:3000/user";
+            $url= env("API_URL", "http://localhost:3000") . "/user";
             try {
                 $options = [
                     'headers' => [
