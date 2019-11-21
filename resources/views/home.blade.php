@@ -81,6 +81,11 @@
                     <div class="title">
                         Home
                     </div>
+                    <span style="font-size: 30px; color:red">
+                        <?php if (isset($erro)) {
+                            echo ($erro);
+                        } ?>
+                    </span>
                     <br />
                     <br />
                     <div style="text-align: left;">

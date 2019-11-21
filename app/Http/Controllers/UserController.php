@@ -130,4 +130,34 @@ class UserController extends Controller
             return view('user-edit', compact('erro'));
         }
     }
+
+    function Delete()
+    {
+        if (session_id() == '') {
+            session_start();
+        }
+        $id = request()->route('id');
+        $client = new Client();
+        $url = env("API_URL", "http://localhost:3000") . "/user/" . $id;
+        try {
+            $options = [
+                'headers' => [
+                    'content-type' => 'application/json',
+                    'token' => $_SESSION['token']
+                ]
+            ];
+            $response = $client->request('DELETE', $url, $options);
+            if ($response->getBody()) {
+                $body = json_decode($response->getBody());
+                if (session_id() == '') {
+                    session_start();
+                }
+                return redirect('/');
+            }
+        } catch (\GuzzleHttp\Exception\ClientException $e) {
+            dd($e);
+            $erro = "Existem dados invalidos na requisicao.";
+            return view('home', compact('erro'));
+        }
+    }
 }
