@@ -23,4 +23,9 @@ Route::get('/register', function(){
     return view('register');
 });
 
+Route::view('/home','home')->name('home page');
+// Route::get('/home', function(){
+//     return view('home');
+// });
+
 Route::post('/user/login', 'UserController@Login');
