@@ -29,3 +29,4 @@ Route::view('/home','home')->name('home page');
 // });
 
 Route::post('/user/login', 'UserController@Login');
+Route::post('/registeruser', 'UserController@Register');

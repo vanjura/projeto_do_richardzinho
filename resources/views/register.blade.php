@@ -1,114 +1,126 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Login</title>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Login</title>
 
-        <!-- Scripts -->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-        <!-- Styles -->
-        <style>
-        html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-            .full-height {
-                height: 100vh;
-            }
+    <!-- Styles -->
+    <style>
+        html,
+        body {
+            background-color: #fff;
+            color: #636b6f;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 200;
+            height: 100vh;
+            margin: 0;
+        }
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
+        .full-height {
+            height: 100vh;
+        }
 
-            .position-ref {
-                position: relative;
-            }
+        .flex-center {
+            align-items: center;
+            display: flex;
+            justify-content: center;
+        }
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
+        .position-ref {
+            position: relative;
+        }
 
-            .content {
-                text-align: center;
-            }
+        .top-right {
+            position: absolute;
+            right: 10px;
+            top: 18px;
+        }
 
-            .title {
-                font-size: 84px;
-            }
+        .content {
+            text-align: center;
+        }
 
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
+        .title {
+            font-size: 84px;
+        }
 
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
+        .links>a {
+            color: #636b6f;
+            padding: 0 25px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: .1rem;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .m-b-md {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+
+<body>
     <div class="content">
         <div class="row">
             <div class=col-md-12 align="center">
                 <div class="col-md-2"></div>
                 <div class="col-md-8">
                     <div class="title">
-                        Login
+                        Registre-se
                     </div>
-                    <br/>
-                    <br/>
-                    <div align="center">
-                    <div class="form-group">
-                        <span style="font-size: 30px">Registre-se</span>
-                        <input class="form-control form-control-lg" type="text" placeholder="Username" name="user" id="user">
-                    </div>
-                    <br/>
-                    <div class="form-group">
-                        <span style="font-size: 30px">E-mail</span>
-                        <input class="form-control form-control-lg" type="password" placeholder="Senha" id="password" name="password">
-                    </div>
-                    <div class="form-group">
-                        <span style="font-size: 30px">Senha</span>
-                        <input class="form-control form-control-lg" type="password" placeholder="Senha" id="password" name="password">
-                    </div>
-                    <div class="form-group">
-                        <span style="font-size: 30px">Confirme a Senha</span>
-                        <input class="form-control form-control-lg" type="password" placeholder="Senha" id="password" name="password">
-                    </div>
-                    <div class="form-group">
-                        <span style="font-size: 30px">Data de Nascimento</span>
-                        <input class="form-control form-control-lg" type="password" placeholder="Senha" id="password" name="password">
-                    </div>
-                    </div>
-                    <br>
-                    <button type="submit" class="btn btn-outline-success">Entrar</button>
+                    <span style="font-size: 30px; color:red">
+                    <?php if(isset($erro)){echo($erro);} ?>
+                    </span>
+                    <form method="post" action="/registeruser">
+                        <?php echo csrf_field() ?>
+                        <div align="center">
+                            <div class="form-group">
+                                <span style="font-size: 30px">Username</span>
+                                <input class="form-control form-control-lg" type="text" placeholder="Username" name="username" id="username">
+                            </div>
+                            <br />
+                            <div class="form-group">
+                                <span style="font-size: 30px">E-mail</span>
+                                <input class="form-control form-control-lg" type="text" placeholder="E-Mail" id="email" name="email">
+                            </div>
+                            <div class="form-group">
+                                <span style="font-size: 30px">Senha</span>
+                                <input class="form-control form-control-lg" type="password" placeholder="Password" id="password" name="password">
+                            </div>
+                            <div class="form-group">
+                                <span style="font-size: 30px">Sexo</span>
+                                <input class="form-control form-control-lg" type="text" placeholder="Sexo" id="sex" name="sex">
+                            </div>
+                            <div class="form-group">
+                                <span style="font-size: 30px">Data de Nascimento</span>
+                                <input class="form-control form-control-lg" type="date" data-date="" data-date-format="YYYY-MM-DD" id="birthdate" name="birthdate">
+                            </div>
+                        </div>
+                        <br>
+                        <div align="center">
+                            <button type="submit" class="btn btn-outline-success">Salvar</button>
+                            <a href="/login">
+                                <p>Voltar</p>
+                        </div>
+                    </form>
                 </div>
                 <div class="col-md-2"></div>
             </div>
         </div>
     </div>
-    </body>
+</body>
+
 </html>

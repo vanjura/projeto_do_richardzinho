@@ -83,26 +83,31 @@
                     </div>
                     <br />
                     <br />
-                    <div align="center">
+                    <span style="font-size: 30px; color:red">
+                    <?php if(isset($erro)){echo($erro);} ?>
+                    </span>
+                    <div>
                         <div class="form-group">
-                            <span style="font-size: 30px">Login</span>
                             <form method="post" action="/user/login">
-                            <?php echo csrf_field() ?>
-                                <input class="form-control form-control-lg" type="text" placeholder="E-mail" name="email" id="email">
-                        </div>
-                        <br />
-                        <div class="form-group">
-                            <span style="font-size: 30px">Senha</span>
-                            <input class="form-control form-control-lg" type="password" placeholder="Senha" id="password" name="password">
+                                <?php echo csrf_field() ?>
+                                <div class="form-group">
+                                    <span style="font-size: 30px">E-mail</span>
+                                    <input class="form-control form-control-lg" type="text" placeholder="E-mail" name="email" id="email">
+                                </div>
+                                <div class="form-group">
+                                    <span style="font-size: 30px">Senha</span>
+                                    <input class="form-control form-control-lg" type="password" placeholder="Senha" id="password" name="password">
+                                </div>
+                                <br>
+                                <button type="submit" class="btn btn-outline-success">Entrar</button>
+                                <div align="center">
+                                    <a href="/register">
+                                    <p>Registre-se</p>
+                                </div>
+                                <br>
+                            </form>
                         </div>
                     </div>
-                    <br>
-                    <button type="submit" class="btn btn-outline-success">Entrar</button>
-                    <div align="center">
-                        <a href="/register"><p>Registre-se</p>
-                    </div>
-                    <br>
-                    </form>
 
                 </div>
                 <div class="col-md-2"></div>
