@@ -38,7 +38,7 @@ class UserController extends Controller
                 return view('login', compact('erro'));
             }
         } else {
-            $erro = "Você deve preencher os itens para continuar.";
+            $erro = "Voce deve preencher os itens para continuar.";
             return view('login', compact('erro'));
         }
     }
@@ -46,6 +46,7 @@ class UserController extends Controller
     function Register()
     {
         if (!empty($_POST)) {
+            $_POST['birthdate'] = $_POST['birthdate'] . "T01:00:00.000Z";
             $json = json_encode($_POST);
             $client = new Client();
             $url = env("API_URL", "http://localhost:3000") . "/user";
@@ -71,7 +72,7 @@ class UserController extends Controller
                 return view('register', compact('erro'));
             }
         } else {
-            $erro = "Você deve preencher os itens para continuar.";
+            $erro = "VocÃª deve preencher os itens para continuar.";
             return view('register', compact('erro'));
         }
     }
@@ -88,7 +89,9 @@ class UserController extends Controller
                 $_POST['username'] = $_SESSION['user']->username;
             }
             if ($_POST['birthdate'] == '') {
-                $_POST['birthdate'] = $_SESSION['user']->birthdate;
+                $_POST['birthdate'] = $_SESSION['user']->birthdate . "T01:00:00.000Z";
+            } else {
+                $_POST['birthdate'] = $_POST['birthdate'] . "T01:00:00.000Z";
             }
             if ($_POST['sex'] == '') {
                 $_POST['sex'] = $_SESSION['user']->sex;
@@ -126,7 +129,7 @@ class UserController extends Controller
                 return view('user-edit', compact('erro'));
             }
         } else {
-            $erro = "Você deve preencher os itens para continuar.";
+            $erro = "VocÃª deve preencher os itens para continuar.";
             return view('user-edit', compact('erro'));
         }
     }
