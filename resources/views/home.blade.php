@@ -81,35 +81,8 @@
                     <div class="title">
                         Home
                     </div>
-                    <span style="font-size: 30px; color:red">
-                        <?php if (isset($erro)) {
-                            echo ($erro);
-                        } ?>
-                    </span>
-                    <br />
-                    <br />
-                    <div style="text-align: left;">
-                        <div class="form-group">
-                            <?php if (session_id() == '') {
-                                session_start();
-                            } ?>
-                            <span style="font-size: 30px">Dados do usuario logado:</span>
-                            <br>
-                            <span style="font-size: 30px">id: <?php echo ($_SESSION['user']->id); ?></span>
-                            <br>
-                            <span style="font-size: 30px">username: <?php echo ($_SESSION['user']->username); ?></span>
-                            <br>
-                            <span style="font-size: 30px">email: <?php echo ($_SESSION['user']->email); ?></span>
-                            <br>
-                            <span style="font-size: 30px">birthdate: <?php echo ($_SESSION['user']->birthdate); ?></span>
-                            <br>
-                            <span style="font-size: 30px">sex: <?php echo ($_SESSION['user']->sex); ?></span>
-                            <br>
-                            <a class="btn btn-outline-warning" href="/editUser/{{$_SESSION['user']->id}}" class="button">Editar</a>
-                            <a class="btn btn-outline-danger" href="/deleteUser/{{$_SESSION['user']->id}}" class="button">Excluir</a>
-                        </div>
-                        <div class="col-md-2"></div>
-                    </div>
+                    <a class="btn btn-outline-success" href="/cadastraEvento">Cadastrar evento</a>
+                    <a class="btn btn-outline-success" href="">Vizualizar eventos</a>
                 </div>
             </div>
 </body>

@@ -27,7 +27,6 @@ Route::get('/editUser/{id}', function () {
     return view('user-edit');
 });
 
-
 Route::view('/home','home')->name('home page');
 // Route::get('/home', function(){
 //     return view('home');
@@ -36,4 +35,6 @@ Route::view('/home','home')->name('home page');
 Route::post('/user/login', 'UserController@Login');
 Route::post('/user/edit/{id}', 'UserController@Edit');
 Route::get('/deleteUser/{id}', 'UserController@Delete');
+Route::get('/cadastraEvento', 'EventoController@Index');
+Route::post('/registerEvent', 'EventoController@Store');
 Route::post('/registeruser', 'UserController@Register');
