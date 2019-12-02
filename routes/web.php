@@ -37,4 +37,11 @@ Route::post('/user/edit/{id}', 'UserController@Edit');
 Route::get('/deleteUser/{id}', 'UserController@Delete');
 Route::get('/cadastraEvento', 'EventoController@Index');
 Route::post('/registerEvent', 'EventoController@Store');
+Route::get('/viewEvents', 'EventoController@Show');
 Route::post('/registeruser', 'UserController@Register');
+
+Route::get('editaEvento', ['as' => 'evento.edita', 'uses' => 'EventoController@Edita']);
+Route::get('excluiEvento', ['as' => 'evento.exclui', 'uses' => 'EventoController@Exclui']);
+Route::get('cancelaEvento', ['as' => 'evento.cancela', 'uses' => 'EventoController@Cancela']);
+Route::get('inscrever', ['as' => 'participant.inscreve', 'uses' => 'PessoaController@Inscreve']);
+

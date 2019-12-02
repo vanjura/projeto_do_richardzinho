@@ -82,7 +82,7 @@
                         Home
                     </div>
                     <a class="btn btn-outline-success" href="/cadastraEvento">Cadastrar evento</a>
-                    <a class="btn btn-outline-success" href="">Vizualizar eventos</a>
+                    <a class="btn btn-outline-success" href="/viewEvents">Vizualizar eventos</a>
                 </div>
             </div>
 </body>

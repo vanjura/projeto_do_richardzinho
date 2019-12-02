@@ -23,6 +23,7 @@ class EventoController extends Controller
             $response = $client->request('GET', $url, $options);
             if ($response->getBody()) {
                 $tipos = json_decode($response->getBody());
+                $_SESSION['tipos'] = $tipos;
                 return view('cadastro-evento', compact('tipos'));
             }
         } catch (\GuzzleHttp\Exception\ClientException $e) {
@@ -60,13 +61,80 @@ class EventoController extends Controller
                 'body' => $json
             ];
             $response = $client->request('POST', $url, $options);
+            return view('home');
+        } catch (\GuzzleHttp\Exception\ClientException $e) {
+            $erro = "Existem dados invalidos na requisicao.";
+            $tipos = $_SESSION['tipos'];
+            return view('cadastro-evento', compact('tipos', 'erro'));
+        }
+    }
+
+    public function Show(){
+        if (session_id() == '') {
+            session_start();
+        }
+        $url = env("API_URL", "http://localhost:3000") . "/event";
+        $client = new Client();
+        try {
+            $options = [
+                'headers' => [
+                    'content-type' => 'application/json',
+                    'token' => $_SESSION['token']
+                ]
+            ];
+            $response = $client->request('GET', $url, $options);
             if ($response->getBody()) {
-                dd($response->getBody());
-                return view('home');
+                $eventos = json_decode($response->getBody());
+                $_SESSION['eventos'] = $eventos;
+                return view('view-evento', compact('eventos'));
             }
         } catch (\GuzzleHttp\Exception\ClientException $e) {
             $erro = "Existem dados invalidos na requisicao.";
-            return view('cadastro-evento');
+            return view('home');
         }
+    }
+
+    public function Edita(Request $request){
+        // dd("Chegou aqui", $request->all());
+        if (session_id() == '') {
+            session_start();
+        }
+        $url = env("API_URL", "http://localhost:3000") . "/event/" . $request->input('event');
+        $client = new Client();
+        try {
+            $options = [
+                'headers' => [
+                    'content-type' => 'application/json',
+                    'token' => $_SESSION['token']
+                ]
+            ];
+            $response = $client->request('GET', $url, $options);
+            if ($response->getBody()) {
+                $evento = json_decode($response->getBody());
+                $_SESSION['evento-edicao'] = $evento;
+                $url = env("API_URL", "http://localhost:3000") . "/tipoEvento";
+                $client = new Client();
+                try {
+                    $options = [
+                        'headers' => [
+                            'content-type' => 'application/json',
+                            'token' => $_SESSION['token']
+                        ]
+                    ];
+                    $response = $client->request('GET', $url, $options);
+                    if ($response->getBody()) {
+                        $tipos = json_decode($response->getBody());
+                        return view('edita-evento', compact('evento', 'tipos'));
+                    }
+                } catch (\GuzzleHttp\Exception\ClientException $e) {
+                    $erro = "Existem dados invalidos na requisicao.";
+                    return view('home');
+                }
+            }
+        } catch (\GuzzleHttp\Exception\ClientException $e) {
+            $erro = "Existem dados invalidos na requisicao.";
+            return view('home');
+        }
+
     }
 }
