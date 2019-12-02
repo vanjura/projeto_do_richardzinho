@@ -77,7 +77,7 @@
         <div class="row">
             <div class=col-md-12 align="center">
                 <div class="col-md-1"></div>
-                <div class="col-md-8">
+                <div class="col-md-10">
                     <div class="title">
                         Listagem de eventos
                     </div>
@@ -92,7 +92,7 @@
                             <th scope="col">Data de Início</th>
                             <th scope="col">Data de Término</th>
                             <th scope="col">Pessoas inscritas</th>
-                            <th scope="col" colspan="1">Opções</th>
+                            <th scope="col" colspan="1  ">Opções</th>
                         </tr>
                         @foreach($eventos as $evento)
                         @php   
@@ -121,9 +121,10 @@
                                 @if($evento->status == 1)
                                     @if($_SESSION['user']->id == $evento->user->id)
                                         <td>
-                                            <a title="Editar" href="{{ route('evento.edita', ['event' => $evento->id]) }}"><i class="fa fa-edit" style="font-size:25px;color:yellow;padding:1px"></i></a>
-                                            <a title="Excluir" href="{{ route('evento.edita', ['event' => $evento->id]) }}"><i class="fa fa-trash" style="font-size:25px;color:red;padding:1px"></i></a>
-                                            <a title="Cancelar" href="{{ route('evento.edita', ['event' => $evento->id]) }}"><i class="fa fa-ban" style="font-size:25px;color:grey;padding:1px"></i></a>
+                                            <a title="Editar" href="{{ route('evento.edita', ['event' => $evento->id]) }}"><i class="fa fa-edit" style="font-size:20px;color:yellow;padding:1px"></i></a>
+                                            <a title="Excluir" href="{{ route('evento.edita', ['event' => $evento->id]) }}"><i class="fa fa-trash" style="font-size:20px;color:red;padding:1px"></i></a>
+                                            <a title="Cancelar" href="{{ route('evento.edita', ['event' => $evento->id]) }}"><i class="fa fa-ban" style="font-size:20px;color:grey;padding:1px"></i></a>
+                                            <a title="Detalhes" href="/evento/{{$evento->id}}"><i class="fa fa-search" style="font-size:20px;color:blue;"></i></a>
                                         </td>
                                     @else
                                         <td>
@@ -131,9 +132,11 @@
                                             @if($evento->status == 0)
                                                 Cancelado
                                             @elseif($participa)
-                                                Participando
+                                                Inscrito 
+                                                <a title="Detalhes" href="/evento/{{$evento->id}}"><i class="fa fa-search" style="font-size:20px;color:blue;padding:1px"></i></a>
                                             @else
-                                                <a class="btn btn-success btn-sm" href="{{ route('participant.inscreve', ['event' => $evento->id]) }}">Increver-se</a>
+                                                <a title="Increver-se" href="{{ route('participant.inscreve', ['event' => $evento->id]) }}"><i class="fa fa-check" style="font-size:25px;color:green;padding:1px"></i></a>
+                                                <a title="Detalhes" href="/evento/{{$evento->id}}"><i class="fa fa-search" style="font-size:20px;color:blue;padding:1px"></i></a>
                                             @endif
                                         </td>
                                     @endif

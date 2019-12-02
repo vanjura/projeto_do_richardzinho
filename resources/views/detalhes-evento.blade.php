@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Home</title>
+    <title>Evento</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -79,13 +79,38 @@
                 <div class="col-md-2"></div>
                 <div class="col-md-8">
                     <div class="title">
-                        Home
+                        Editar Evento {{$evento->id}}
                     </div>
-                    <a class="btn btn-outline-success" href="/cadastraEvento">Cadastrar evento</a>
-                    <a class="btn btn-outline-success" href="/viewEvents">Visualizar eventos</a>
-                    <a class="btn btn-outline-success" href="/user/edit/">Editar seus dados</a>
+                    <span style="font-size: 30px; color:red">
+                    <?php if(isset($erro)){echo($erro);} ?>
+                    </span>
+                        <?php echo csrf_field() ?>
+                        <div align="center">
+                                <span style="font-size: 30px">Título do evento:</span>
+                                <span style="font-size: 30px">Data de Início:</span>
+                                <span style="font-size: 30px">Data de Término:</span>
+                                <span style="font-size: 30px">Rua:</span>
+                                <span style="font-size: 30px">Bairro:</span>
+                                <span style="font-size: 30px">Cidade:</span>
+                                <span style="font-size: 30px">Ponto de Referência:</span>
+                                <span style="font-size: 30px">Descrição do evento:</span>
+                                <span style="font-size: 30px">Tipo do evento:</span>
+                        </div>
+                        <br>
+                        <div align="center">
+                        <div class="title">
+                            Comentários
+                            </div>
+                            <a href="/home">
+                                <p>Voltar</p>
+                            </a>
+                        </div>
+                    </form>
                 </div>
+                <div class="col-md-2"></div>
             </div>
+        </div>
+    </div>
 </body>
 
 

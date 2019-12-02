@@ -39,6 +39,7 @@ Route::get('/cadastraEvento', 'EventoController@Index');
 Route::post('/registerEvent', 'EventoController@Store');
 Route::post('/editaEvent', 'EventoController@Update');
 Route::get('/viewEvents', 'EventoController@Show');
+Route::get('/event/{id}', 'EventoController@ShowUm');
 Route::post('/registeruser', 'UserController@Register');
 
 Route::get('editaEvento', ['as' => 'evento.edita', 'uses' => 'EventoController@Edita']);

@@ -94,6 +94,31 @@ class EventoController extends Controller
         }
     }
 
+    public function ShowUm(){
+        if (session_id() == '') {
+            session_start();
+        }
+        $id = request()->route('id');
+        $url = env("API_URL", "http://localhost:3000") . "/event/" . $id;
+        $client = new Client();
+        try {
+            $options = [
+                'headers' => [
+                    'content-type' => 'application/json',
+                    'token' => $_SESSION['token']
+                ]
+            ];
+            $response = $client->request('GET', $url, $options);
+            if ($response->getBody()) {
+                $eventos = json_decode($response->getBody());
+                return view('detalhes-evento', compact('evento'));
+            }
+        } catch (\GuzzleHttp\Exception\ClientException $e) {
+            $erro = "Existem dados invalidos na requisicao.";
+            return view('home');
+        }
+    }
+
     public function Edita(Request $request){
         // dd("Chegou aqui", $request->all());
         if (session_id() == '') {
