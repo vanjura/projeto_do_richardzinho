@@ -128,6 +128,13 @@
                                     @endforeach
                                 </select>
                             </div>
+                            <div class="form-group">
+                                <span style="font-size: 30px">Cancelado</span>
+                                <select class="form-control form-control-lg" name="status">
+                                    <option value="true">Não</option> 
+                                    <option value="false">Sim</option> 
+                                </select>
+                            </div>
                         </div>
                         <br>
                         <div align="center">

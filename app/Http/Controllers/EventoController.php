@@ -178,7 +178,7 @@ class EventoController extends Controller
             "referencePoint" => $request->input('referencePoint'),
             "description" => $request->input('description'),
             "eventTypeId" => $request->input('eventTypeId'),
-            "status" => true,
+            "status" => $request->input('status'),
         ];
         $url = env("API_URL", "http://localhost:3000") . "/event";
         $client = new Client();
