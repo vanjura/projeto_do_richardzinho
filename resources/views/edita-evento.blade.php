@@ -84,9 +84,10 @@
                     <span style="font-size: 30px; color:red">
                     <?php if(isset($erro)){echo($erro);} ?>
                     </span>
-                    <form method="post" action="/registerEvent">
+                    <form method="post" action="/editaEvent">
                         <?php echo csrf_field() ?>
                         <div align="center">
+                            <input type="hidden" name="id" value="{{$evento->id}}">
                             <div class="form-group">
                                 <span style="font-size: 30px">Start Date</span>
                                 <input class="form-control form-control-lg" type="date" data-date="" data-date-format="YYYY-MM-DD" id="startDate" name="startDate">
@@ -97,27 +98,27 @@
                             </div>
                             <div class="form-group">
                                 <span style="font-size: 30px">Title</span>
-                                <input class="form-control form-control-lg" type="text" placeholder="Title" name="title" id="title">
+                                <input class="form-control form-control-lg" type="text" placeholder="{{$evento->title}}" name="title" id="title">
                             </div>
                             <div class="form-group">
                                 <span style="font-size: 30px">Street</span>
-                                <input class="form-control form-control-lg" type="text" placeholder="Street" name="street" id="street">
+                                <input class="form-control form-control-lg" type="text" placeholder="{{$evento->street}}" name="street" id="street">
                             </div>
                             <div class="form-group">
                                 <span style="font-size: 30px">neighborhood</span>
-                                <input class="form-control form-control-lg" type="text" placeholder="neighborhood" name="neighborhood" id="neighborhood">
+                                <input class="form-control form-control-lg" type="text" placeholder="{{$evento->neighborhood}}" name="neighborhood" id="neighborhood">
                             </div>
                             <div class="form-group">
                                 <span style="font-size: 30px">city</span>
-                                <input class="form-control form-control-lg" type="text" placeholder="city" name="city" id="city">
+                                <input class="form-control form-control-lg" type="text" placeholder="{{$evento->city}}" name="city" id="city">
                             </div>
                             <div class="form-group">
                                 <span style="font-size: 30px">referencePoint</span>
-                                <input class="form-control form-control-lg" type="text" placeholder="referencePoint" name="referencePoint" id="referencePoint">
+                                <input class="form-control form-control-lg" type="text" placeholder="{{$evento->referencePoint}}" name="referencePoint" id="referencePoint">
                             </div>
                             <div class="form-group">
                                 <span style="font-size: 30px">description</span>
-                                <input class="form-control form-control-lg" type="text" placeholder="description" name="description" id="description">
+                                <input class="form-control form-control-lg" type="text" placeholder="{{$evento->description}}" name="description" id="description">
                             </div>
                             <div class="form-group">
                                 <span style="font-size: 30px">Event Type</span>

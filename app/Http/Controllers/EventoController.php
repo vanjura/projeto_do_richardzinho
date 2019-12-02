@@ -137,4 +137,42 @@ class EventoController extends Controller
         }
 
     }
+
+    public function Update(Request $request){
+        if (session_id() == '') {
+            session_start();
+        }
+        $event = [
+            "id" => $request->input('id'),
+            "title" => $request->input('title'),
+            "startDate" => $request->input('startDate') . "T01:00:00.000Z",
+            "endDate" => $request->input('endDate') . "T01:00:00.000Z",
+            "street" => $request->input('street'),
+            "neighborhood" => $request->input('neighborhood'),
+            "city" => $request->input('city'),
+            "referencePoint" => $request->input('referencePoint'),
+            "description" => $request->input('description'),
+            "eventTypeId" => $request->input('eventTypeId'),
+            "status" => true,
+        ];
+        $url = env("API_URL", "http://localhost:3000") . "/event";
+        $client = new Client();
+        $json = json_encode($event);
+        try {
+            $options = [
+                'headers' => [
+                    'content-type' => 'application/json',
+                    'token' => $_SESSION['token']
+                ],
+                'body' => $json
+            ];
+            $response = $client->request('PUT', $url, $options);
+            if ($response->getBody()) {
+                return redirect('viewEvents');
+            }
+        } catch (\GuzzleHttp\Exception\ClientException $e) {
+            $erro = "Existem dados invalidos na requisicao.";
+            return view('home');
+        }
+    }
 }

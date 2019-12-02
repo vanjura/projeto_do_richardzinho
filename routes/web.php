@@ -37,6 +37,7 @@ Route::post('/user/edit/{id}', 'UserController@Edit');
 Route::get('/deleteUser/{id}', 'UserController@Delete');
 Route::get('/cadastraEvento', 'EventoController@Index');
 Route::post('/registerEvent', 'EventoController@Store');
+Route::post('/editaEvent', 'EventoController@Update');
 Route::get('/viewEvents', 'EventoController@Show');
 Route::post('/registeruser', 'UserController@Register');
 
