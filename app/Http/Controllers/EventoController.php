@@ -39,8 +39,8 @@ class EventoController extends Controller
         $url = env("API_URL", "http://localhost:3000") . "/event";
         $client = new Client();
         $event = [
-            "startDate" => $request->input('startDate') . "T01:00:00.000Z",
-            "endDate" => $request->input('endDate') . "T01:00:00.000Z",
+            "startDate" => $request->input('startDate') . ":00.000Z",
+            "endDate" => $request->input('endDate') . ":00.000Z",
             "title" => $request->input('title'),
             "street" => $request->input('street'),
             "neighborhood" => $request->input('neighborhood'),
@@ -145,8 +145,8 @@ class EventoController extends Controller
         $event = [
             "id" => $request->input('id'),
             "title" => $request->input('title'),
-            "startDate" => $request->input('startDate') . "T01:00:00.000Z",
-            "endDate" => $request->input('endDate') . "T01:00:00.000Z",
+            "startDate" => $request->input('startDate') . ":00.000Z",
+            "endDate" => $request->input('endDate') . ":00.000Z",
             "street" => $request->input('street'),
             "neighborhood" => $request->input('neighborhood'),
             "city" => $request->input('city'),

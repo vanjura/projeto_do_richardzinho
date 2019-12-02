@@ -88,39 +88,39 @@
                         <?php echo csrf_field() ?>
                         <div align="center">
                             <div class="form-group">
-                                <span style="font-size: 30px">Start Date</span>
-                                <input class="form-control form-control-lg" type="date" data-date="" data-date-format="YYYY-MM-DD" id="startDate" name="startDate">
+                                <span style="font-size: 30px">Data de Início</span>
+                                <input class="form-control form-control-lg" type="datetime-local" data-date="" data-date-format="YYYY-MM-DD" id="startDate" name="startDate">
                             </div>
                             <div class="form-group">
-                                <span style="font-size: 30px">End Date</span>
-                                <input class="form-control form-control-lg" type="date" data-date="" data-date-format="YYYY-MM-DD" id="endDate" name="endDate">
+                                <span style="font-size: 30px">Data de Término</span>
+                                <input class="form-control form-control-lg" type="datetime-local" data-date="" data-date-format="YYYY-MM-DD" id="endDate" name="endDate">
                             </div>
                             <div class="form-group">
-                                <span style="font-size: 30px">Title</span>
-                                <input class="form-control form-control-lg" type="text" placeholder="Title" name="title" id="title">
+                                <span style="font-size: 30px">Título do evento</span>
+                                <input class="form-control form-control-lg" type="text" placeholder="Título do evento" name="title" id="title">
                             </div>
                             <div class="form-group">
-                                <span style="font-size: 30px">Street</span>
-                                <input class="form-control form-control-lg" type="text" placeholder="Street" name="street" id="street">
+                                <span style="font-size: 30px">Rua</span>
+                                <input class="form-control form-control-lg" type="text" placeholder="Rua" name="street" id="street">
                             </div>
                             <div class="form-group">
-                                <span style="font-size: 30px">neighborhood</span>
-                                <input class="form-control form-control-lg" type="text" placeholder="neighborhood" name="neighborhood" id="neighborhood">
+                                <span style="font-size: 30px">Bairro</span>
+                                <input class="form-control form-control-lg" type="text" placeholder="Bairro" name="neighborhood" id="neighborhood">
                             </div>
                             <div class="form-group">
-                                <span style="font-size: 30px">city</span>
-                                <input class="form-control form-control-lg" type="text" placeholder="city" name="city" id="city">
+                                <span style="font-size: 30px">Cidade</span>
+                                <input class="form-control form-control-lg" type="text" placeholder="Cidade" name="city" id="city">
                             </div>
                             <div class="form-group">
-                                <span style="font-size: 30px">referencePoint</span>
-                                <input class="form-control form-control-lg" type="text" placeholder="referencePoint" name="referencePoint" id="referencePoint">
+                                <span style="font-size: 30px">Ponto de Referência</span>
+                                <input class="form-control form-control-lg" type="text" placeholder="Ponto de Referência" name="referencePoint" id="referencePoint">
                             </div>
                             <div class="form-group">
-                                <span style="font-size: 30px">description</span>
-                                <input class="form-control form-control-lg" type="text" placeholder="description" name="description" id="description">
+                                <span style="font-size: 30px">Descrição do evento</span>
+                                <input class="form-control form-control-lg" type="text" placeholder="Descrição do evento" name="description" id="description">
                             </div>
                             <div class="form-group">
-                                <span style="font-size: 30px">Event Type</span>
+                                <span style="font-size: 30px">Tipo do evento</span>
                                 <select class="form-control form-control-lg" name="eventTypeId">
                                     @foreach($tipos as $tipo)
                                         <option value="{{ $tipo->id }}">{{$tipo->name}}</option> 

@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Login</title>
+    <title>Editar Evento</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -79,7 +79,7 @@
                 <div class="col-md-2"></div>
                 <div class="col-md-8">
                     <div class="title">
-                        Cadastro de Evento
+                        Editar Evento
                     </div>
                     <span style="font-size: 30px; color:red">
                     <?php if(isset($erro)){echo($erro);} ?>
@@ -89,39 +89,39 @@
                         <div align="center">
                             <input type="hidden" name="id" value="{{$evento->id}}">
                             <div class="form-group">
-                                <span style="font-size: 30px">Start Date</span>
-                                <input class="form-control form-control-lg" type="date" data-date="" data-date-format="YYYY-MM-DD" id="startDate" name="startDate">
+                                <span style="font-size: 30px">Data de Início</span>
+                                <input class="form-control form-control-lg" type="datetime-local" data-date="" data-date-format="yyyy-MM-ddThh:mm" id="startDate" name="startDate" value="<?= substr($evento->startDate, 0 , 16)?>">
                             </div>
                             <div class="form-group">
-                                <span style="font-size: 30px">End Date</span>
-                                <input class="form-control form-control-lg" type="date" data-date="" data-date-format="YYYY-MM-DD" id="endDate" name="endDate">
+                                <span style="font-size: 30px">Data de Término</span>
+                                <input class="form-control form-control-lg" type="datetime-local" data-date="" data-date-format="YYYY-MM-DD" id="endDate" name="endDate" value="<?= substr($evento->endDate, 0 , 16)?>">
                             </div>
                             <div class="form-group">
-                                <span style="font-size: 30px">Title</span>
+                                <span style="font-size: 30px">Título do evento</span>
                                 <input class="form-control form-control-lg" type="text" placeholder="{{$evento->title}}" name="title" id="title">
                             </div>
                             <div class="form-group">
-                                <span style="font-size: 30px">Street</span>
+                                <span style="font-size: 30px">Rua</span>
                                 <input class="form-control form-control-lg" type="text" placeholder="{{$evento->street}}" name="street" id="street">
                             </div>
                             <div class="form-group">
-                                <span style="font-size: 30px">neighborhood</span>
+                                <span style="font-size: 30px">Bairro</span>
                                 <input class="form-control form-control-lg" type="text" placeholder="{{$evento->neighborhood}}" name="neighborhood" id="neighborhood">
                             </div>
                             <div class="form-group">
-                                <span style="font-size: 30px">city</span>
+                                <span style="font-size: 30px">Cidade</span>
                                 <input class="form-control form-control-lg" type="text" placeholder="{{$evento->city}}" name="city" id="city">
                             </div>
                             <div class="form-group">
-                                <span style="font-size: 30px">referencePoint</span>
+                                <span style="font-size: 30px">Ponto de Referência</span>
                                 <input class="form-control form-control-lg" type="text" placeholder="{{$evento->referencePoint}}" name="referencePoint" id="referencePoint">
                             </div>
                             <div class="form-group">
-                                <span style="font-size: 30px">description</span>
+                                <span style="font-size: 30px">Descrição do evento</span>
                                 <input class="form-control form-control-lg" type="text" placeholder="{{$evento->description}}" name="description" id="description">
                             </div>
                             <div class="form-group">
-                                <span style="font-size: 30px">Event Type</span>
+                                <span style="font-size: 30px">Tipo do evento</span>
                                 <select class="form-control form-control-lg" name="eventTypeId">
                                     @foreach($tipos as $tipo)
                                         <option value="{{ $tipo->id }}">{{$tipo->name}}</option> 

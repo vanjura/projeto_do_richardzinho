@@ -5,12 +5,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Login</title>
+    <title>Eventos</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -76,7 +76,7 @@
     <div class="content">
         <div class="row">
             <div class=col-md-12 align="center">
-                <div class="col-md-2"></div>
+                <div class="col-md-1"></div>
                 <div class="col-md-8">
                     <div class="title">
                         Listagem de eventos
@@ -87,12 +87,12 @@
                     <table class="table">
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">title</th>
-                            <th scope="col">user</th>
-                            <th scope="col">startDate</th>
-                            <th scope="col">endDate</th>
-                            <th scope="col">pessoas</th>
-                            <th scope="col" colspan="3">Opções</th>
+                            <th scope="col">Título</th>
+                            <th scope="col">Criador</th>
+                            <th scope="col">Data de Início</th>
+                            <th scope="col">Data de Término</th>
+                            <th scope="col">Pessoas inscritas</th>
+                            <th scope="col" colspan="1">Opções</th>
                         </tr>
                         @foreach($eventos as $evento)
                         @php   
@@ -121,9 +121,9 @@
                                 @if($evento->status == 1)
                                     @if($_SESSION['user']->id == $evento->user->id)
                                         <td>
-                                            <a class="btn btn-warning btn-sm" href="{{ route('evento.edita', ['event' => $evento->id]) }}">Editar</a>
-                                            <a class="btn btn-danger btn-sm" href="{{ route('evento.edita', ['event' => $evento->id]) }}">Excluir</a>
-                                            <a class="btn btn-secondary btn-sm" href="{{ route('evento.edita', ['event' => $evento->id]) }}">Cancelar</a>
+                                            <a title="Editar" href="{{ route('evento.edita', ['event' => $evento->id]) }}"><i class="fa fa-edit" style="font-size:25px;color:yellow;padding:1px"></i></a>
+                                            <a title="Excluir" href="{{ route('evento.edita', ['event' => $evento->id]) }}"><i class="fa fa-trash" style="font-size:25px;color:red;padding:1px"></i></a>
+                                            <a title="Cancelar" href="{{ route('evento.edita', ['event' => $evento->id]) }}"><i class="fa fa-ban" style="font-size:25px;color:grey;padding:1px"></i></a>
                                         </td>
                                     @else
                                         <td>
@@ -143,9 +143,9 @@
                                 
                             </tr>
                         @endforeach
-                    </table>
-                    
+                    </table>  
                 </div>
+                <div class="col-md-1"></div>
             </div>
 </body>
 

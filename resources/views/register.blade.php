@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Login</title>
+    <title>Registro</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -102,7 +102,11 @@
                             </div>
                             <div class="form-group">
                                 <span style="font-size: 30px">Sexo</span>
-                                <input class="form-control form-control-lg" type="text" placeholder="Sexo" id="sex" name="sex">
+                                <select class="custom-select form-control-lg" name="sex" id="sex">
+                                    <option>M</option>
+                                    <option>F</option>
+                                </select>
+                                <!--<input class="form-control form-control-lg" type="text" placeholder="Sexo" id="sex" name="sex">-->
                             </div>
                             <div class="form-group">
                                 <span style="font-size: 30px">Data de Nascimento</span>

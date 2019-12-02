@@ -64,7 +64,8 @@ class UserController extends Controller
                         session_start();
                     }
                     // $_SESSION['user'] = $body->user;
-                    // return view('dashboard', compact('body'));
+                    // return view('dashboard', compact('body');
+                    
                     return redirect('/login');
                 }
             } catch (\GuzzleHttp\Exception\ClientException $e) {

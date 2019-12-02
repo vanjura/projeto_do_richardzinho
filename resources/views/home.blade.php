@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Login</title>
+    <title>Home</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -82,7 +82,7 @@
                         Home
                     </div>
                     <a class="btn btn-outline-success" href="/cadastraEvento">Cadastrar evento</a>
-                    <a class="btn btn-outline-success" href="/viewEvents">Vizualizar eventos</a>
+                    <a class="btn btn-outline-success" href="/viewEvents">Visualizar eventos</a>
                 </div>
             </div>
 </body>
