@@ -98,27 +98,27 @@
                             </div>
                             <div class="form-group">
                                 <span style="font-size: 30px">Título do evento</span>
-                                <input class="form-control form-control-lg" type="text" placeholder="{{$evento->title}}" name="title" id="title">
+                                <input class="form-control form-control-lg" type="text" value="{{$evento->title}}" name="title" id="title">
                             </div>
                             <div class="form-group">
                                 <span style="font-size: 30px">Rua</span>
-                                <input class="form-control form-control-lg" type="text" placeholder="{{$evento->street}}" name="street" id="street">
+                                <input class="form-control form-control-lg" type="text" value="{{$evento->street}}" name="street" id="street">
                             </div>
                             <div class="form-group">
                                 <span style="font-size: 30px">Bairro</span>
-                                <input class="form-control form-control-lg" type="text" placeholder="{{$evento->neighborhood}}" name="neighborhood" id="neighborhood">
+                                <input class="form-control form-control-lg" type="text" value="{{$evento->neighborhood}}" name="neighborhood" id="neighborhood">
                             </div>
                             <div class="form-group">
                                 <span style="font-size: 30px">Cidade</span>
-                                <input class="form-control form-control-lg" type="text" placeholder="{{$evento->city}}" name="city" id="city">
+                                <input class="form-control form-control-lg" type="text" value="{{$evento->city}}" name="city" id="city">
                             </div>
                             <div class="form-group">
                                 <span style="font-size: 30px">Ponto de Referência</span>
-                                <input class="form-control form-control-lg" type="text" placeholder="{{$evento->referencePoint}}" name="referencePoint" id="referencePoint">
+                                <input class="form-control form-control-lg" type="text" value="{{$evento->referencePoint}}" name="referencePoint" id="referencePoint">
                             </div>
                             <div class="form-group">
                                 <span style="font-size: 30px">Descrição do evento</span>
-                                <input class="form-control form-control-lg" type="text" placeholder="{{$evento->description}}" name="description" id="description">
+                                <input class="form-control form-control-lg" type="text" value="{{$evento->description}}" name="description" id="description">
                             </div>
                             <div class="form-group">
                                 <span style="font-size: 30px">Tipo do evento</span>

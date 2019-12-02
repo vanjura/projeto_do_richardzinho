@@ -122,9 +122,9 @@
                                     @if($_SESSION['user']->id == $evento->user->id)
                                         <td>
                                             <a title="Editar" href="{{ route('evento.edita', ['event' => $evento->id]) }}"><i class="fa fa-edit" style="font-size:20px;color:yellow;padding:1px"></i></a>
-                                            <a title="Excluir" href="{{ route('evento.edita', ['event' => $evento->id]) }}"><i class="fa fa-trash" style="font-size:20px;color:red;padding:1px"></i></a>
-                                            <a title="Cancelar" href="{{ route('evento.edita', ['event' => $evento->id]) }}"><i class="fa fa-ban" style="font-size:20px;color:grey;padding:1px"></i></a>
-                                            <a title="Detalhes" href="/evento/{{$evento->id}}"><i class="fa fa-search" style="font-size:20px;color:blue;"></i></a>
+                                            <!-- <a title="Excluir" href="{{ route('evento.edita', ['event' => $evento->id]) }}"><i class="fa fa-trash" style="font-size:20px;color:red;padding:1px"></i></a> -->
+                                            <!-- <a title="Cancelar" href="{{ route('evento.edita', ['event' => $evento->id]) }}"><i class="fa fa-ban" style="font-size:20px;color:grey;padding:1px"></i></a> -->
+                                            <!-- <a title="Detalhes" href="/evento/{{$evento->id}}"><i class="fa fa-search" style="font-size:20px;color:blue;"></i></a> -->
                                         </td>
                                     @else
                                         <td>
@@ -133,10 +133,10 @@
                                                 Cancelado
                                             @elseif($participa)
                                                 Inscrito 
-                                                <a title="Detalhes" href="/evento/{{$evento->id}}"><i class="fa fa-search" style="font-size:20px;color:blue;padding:1px"></i></a>
+                                                <!-- <a title="Detalhes" href="/evento/{{$evento->id}}"><i class="fa fa-search" style="font-size:20px;color:blue;padding:1px"></i></a> -->
                                             @else
                                                 <a title="Increver-se" href="{{ route('participant.inscreve', ['event' => $evento->id]) }}"><i class="fa fa-check" style="font-size:25px;color:green;padding:1px"></i></a>
-                                                <a title="Detalhes" href="/evento/{{$evento->id}}"><i class="fa fa-search" style="font-size:20px;color:blue;padding:1px"></i></a>
+                                                <!-- <a title="Detalhes" href="/evento/{{$evento->id}}"><i class="fa fa-search" style="font-size:20px;color:blue;padding:1px"></i></a> -->
                                             @endif
                                         </td>
                                     @endif
