@@ -79,28 +79,54 @@
                 <div class="col-md-2"></div>
                 <div class="col-md-8">
                     <div class="title">
-                        Editar Evento {{$evento->id}}
+                        Detalhes Evento {{$evento->id}}
                     </div>
                     <span style="font-size: 30px; color:red">
                     <?php if(isset($erro)){echo($erro);} ?>
                     </span>
                         <?php echo csrf_field() ?>
                         <div align="center">
-                                <span style="font-size: 30px">Título do evento:</span>
-                                <span style="font-size: 30px">Data de Início:</span>
-                                <span style="font-size: 30px">Data de Término:</span>
-                                <span style="font-size: 30px">Rua:</span>
-                                <span style="font-size: 30px">Bairro:</span>
-                                <span style="font-size: 30px">Cidade:</span>
-                                <span style="font-size: 30px">Ponto de Referência:</span>
-                                <span style="font-size: 30px">Descrição do evento:</span>
-                                <span style="font-size: 30px">Tipo do evento:</span>
+                                <span style="font-size: 30px"><strong>Título do evento:</strong>{{$evento->title}}</span><br>
+                                <span style="font-size: 30px"><strong>Data de Início:</strong>{{$evento->startDate}}</span><br>
+                                <span style="font-size: 30px"><strong>Data de Término:</strong>{{$evento->endDate}}</span><br>
+                                <span style="font-size: 30px"><strong>Rua:</strong>{{$evento->street}}</span><br>
+                                <span style="font-size: 30px"><strong>Bairro:</strong>{{$evento->neighborhood}}</span><br>
+                                <span style="font-size: 30px"><strong>Cidade:</strong>{{$evento->city}}</span><br>
+                                <span style="font-size: 30px"><strong>Ponto de Referência:</strong>{{$evento->referencePoint}}</span><br>
+                                <span style="font-size: 30px"><strong>Descrição do evento:</strong>{{$evento->description}}</span><br>
+                                <span style="font-size: 30px"><strong>Tipo do evento:</strong>{{$evento->eventType->name}}</span><br>
+                                <span style="font-size: 30px"><strong>Criador do evento:</strong>{{$evento->user->username}}</span><br><br>
                         </div>
                         <br>
                         <div align="center">
                         <div class="title">
                             Comentários
-                            </div>
+                        </div>
+                        <table class="table">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Criador</th>
+                            <th scope="col">Comentário</th>
+                            <th scope="col">Data</th>
+                        </tr>
+                        @foreach($eventos as $evento)
+                            <tr>
+                                <td>{{$message->id}}</td>
+                                <td>{{$message->username}}</td>
+                                <td>{{$message->message}}</td>
+                                <td>{{explode("T",$message->messageDate)[0]}}</td>                             
+                            </tr>
+                        @endforeach
+                    </table>
+                        </div>
+                        <br>
+                        <div class="title">
+                            Adicione seu comentário:
+                        </div>
+                        <form method="post" action="/mensagem">
+                        <input class="form-control form-control-lg" type="textarea" placeholder="Insira seu comentário aqui" id="message" name="message">
+                        </form>
+                        <div align="center">
                             <a href="/home">
                                 <p>Voltar</p>
                             </a>
